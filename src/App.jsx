@@ -1,20 +1,32 @@
-import React from 'react'
-import Header from './components/header.jsx';
-import Main from './components/main.jsx';
-import Footer from './components/footer.jsx';
-import Greeting from './components/greeting.jsx';
-
+import React from "react";
+import Counter from "./components/Counter.jsx";
+import OnClick from "./components/OnClick.jsx";
+import OnChange from "./components/OnChange.jsx";
+import OnSubmit from "./components/OnSubmit.jsx";
+import OnMouseEnterAndLeave from "./components/OnMouseEnterAndLeave.jsx";
+import ConditionalRendering from "./components/ConditionalRendering.jsx";
+import ListRendering from "./components/ListRendering.jsx";
+import ToggleLightMode from "./components/ToggleLightMode.jsx";
 
 export default function App() {
+  let done=false;
   return (
-    <div className='main-body'>
-      {/* <Greeting name="John" age={30} />
-      <Greeting name="rock" age={23} /> */}
-      <Greeting />
-
-      {/* <Header />
-      <Main />
-      <Footer /> */}
-    </div>
-  )
+    <>
+    <div className="main-body">
+        {done && (
+          <div>
+            <Greeting />
+            <OnSubmit />
+            <OnChange />
+            <MouseEnter />
+            <OmMouseLeaves />
+            <Counter />
+            <ConditionalRendering />
+          </div>
+        )}
+        <ListRendering />
+        <ToggleLightMode />
+      </div>
+    </>
+  );
 }
