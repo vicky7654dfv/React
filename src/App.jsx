@@ -7,6 +7,11 @@ import OnMouseEnterAndLeave from "./components/OnMouseEnterAndLeave.jsx";
 import ConditionalRendering from "./components/ConditionalRendering.jsx";
 import ListRendering from "./components/ListRendering.jsx";
 import ToggleLightMode from "./components/ToggleLightMode.jsx";
+import HandlingInput from "./components/HandlingInput.jsx";
+import MultiInput from "./components/MultiInput.jsx";
+import ValueChangeUsingUseEffect from "./components/ValueChangeUsingUseEffect.jsx";
+import ClearUpFunction from "./components/ClearUpFunction.jsx"
+import Timer from "./components/Timer.jsx";
 
 export default function App() {
   let done=false;
@@ -20,12 +25,17 @@ export default function App() {
             <OnChange />
             <MouseEnter />
             <OmMouseLeaves />
-            <Counter />
             <ConditionalRendering />
+            <ListRendering />
+            <ToggleLightMode />
+            <Counter />
+            <HandlingInput />
+            <MultiInput />
+            <ValueChangeUsingUseEffect />
+            <ClearUpFunction />
           </div>
         )}
-        <ListRendering />
-        <ToggleLightMode />
+        <Timer />
       </div>
     </>
   );

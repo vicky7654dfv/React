@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import styles from "./Counter.module.css"
 
 export default function Greeting() {
     
@@ -20,9 +20,9 @@ export default function Greeting() {
     return(
         <div>
             <h1>Count: {count}</h1>
-            <button onClick={increment}>+</button> <br />
-            <button onClick={decrement}>-</button> <br />
-            <button onClick={reset}>Reset</button> <br />
+            <button className={styles.btn} onClick={increment}>+</button> <br />
+            <button className={styles.btn} onClick={decrement}>-</button> <br />
+            <button className={styles.btn} onClick={reset}>Reset</button> <br />
         </div>
     )
 }
