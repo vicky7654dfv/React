@@ -12,6 +12,8 @@ import MultiInput from "./components/MultiInput.jsx";
 import ValueChangeUsingUseEffect from "./components/ValueChangeUsingUseEffect.jsx";
 import ClearUpFunction from "./components/ClearUpFunction.jsx"
 import Timer from "./components/Timer.jsx";
+import ApiUseEffect from "./components/ApiUseEffect.jsx";
+import StopWatch from "./components/StopWatch.jsx";
 
 export default function App() {
   let done=false;
@@ -33,9 +35,12 @@ export default function App() {
             <MultiInput />
             <ValueChangeUsingUseEffect />
             <ClearUpFunction />
+            <Timer />
+            <ApiUseEffect />
+            <StopWatch />
           </div>
         )}
-        <Timer />
+        
       </div>
     </>
   );

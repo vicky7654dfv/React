@@ -1,0 +1,35 @@
+
+useEffect-
+## hooks
+usestate
+useEffect
+useContext
+useReducer
+useCallback
+useRef
+
+
+type of states
+
+local states - Usestate , useReducer --inside one component
+
+global state - useContext , Redux  -- Across a component
+
+server state -useEffect ,React Query -- Remote data(API)
+
+URL state-  useSearchParams ,useParams -- Routing info (Access address path)
+
+Form state -  useState -- user input
+
+
+## ROUTER DOM
+npm install react-router-dom
+<BrowserRouter>
+    <Routes>
+        <Route path={"/"} element={<Home/>}/>
+        <Route path={"/about"} element={<About/>}/>
+        <Route/>
+        <Route/>
+        <Route/>
+    </Routes>
+</BrowserRouter>
