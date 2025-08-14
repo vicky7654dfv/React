@@ -14,6 +14,7 @@ import ClearUpFunction from "./components/ClearUpFunction.jsx"
 import Timer from "./components/Timer.jsx";
 import ApiUseEffect from "./components/ApiUseEffect.jsx";
 import StopWatch from "./components/StopWatch.jsx";
+import UseRef from "./components/UseRef.jsx";
 
 export default function App() {
   let done=false;
@@ -40,7 +41,7 @@ export default function App() {
             <StopWatch />
           </div>
         )}
-        
+        <UseRef />
       </div>
     </>
   );
