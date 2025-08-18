@@ -1,17 +1,30 @@
-import React from "react";
-import A from "./components/A";
+import React, { useReducer } from "react";
 
 export default function App() {
-  let done=false;
+  const initial = { count: 0 };
+  const [state, dispatch] = useReducer(reducerFunction, initial);
+
+  function reducerFunction(state, action) {
+    switch (action.type) {
+      case "increment":
+        return { count: state.count + 1 };
+      case "decrement":
+        return { count: state.count - 1 };
+      case "reset":
+        return { count: 0 };
+      default:
+        return state;
+    }
+  }
   return (
     <>
-    <div className="main-body">
-        {done && (
-          <div>
-          </div>
-        )}
-        <A />
-      </div>
+      <h1>Count: {state.count}</h1>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button> <br />
+      <br />
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <br />
+      <br />
+      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
     </>
   );
 }
