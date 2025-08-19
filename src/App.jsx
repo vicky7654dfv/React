@@ -1,30 +1,28 @@
-import React, { useReducer } from "react";
+import React, { useCallback, useState } from "react";
+import Child from "./Child";
 
 export default function App() {
-  const initial = { count: 0 };
-  const [state, dispatch] = useReducer(reducerFunction, initial);
+   const [number, setNumber] = useState(1);
+  const [dark, setDark] = useState(false);
 
-  function reducerFunction(state, action) {
-    switch (action.type) {
-      case "increment":
-        return { count: state.count + 1 };
-      case "decrement":
-        return { count: state.count - 1 };
-      case "reset":
-        return { count: 0 };
-      default:
-        return state;
-    }
-  }
+  const getItem = useCallback(() => {
+    return [number, number + 1, number + 2];
+  }, [number]);
+
+  const theme = {
+    backgroundColor: dark ? "#333" : "#fff",
+    color: dark ? "#fff" : "#333",
+  };
+
   return (
-    <>
-      <h1>Count: {state.count}</h1>
-      <button onClick={() => dispatch({ type: "increment" })}>+</button> <br />
-      <br />
-      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
-      <br />
-      <br />
-      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
-    </>
+     <div style={theme}>
+      <input
+        type="number"
+        value={number}
+        onChange={(e) => setNumber(parseInt(e.target.value))}
+      />
+      <button onClick={() => setDark(!dark)}>Toggle theme</button>
+      <Child getItem={getItem} />
+    </div>
   );
 }
