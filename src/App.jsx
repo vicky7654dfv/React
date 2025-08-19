@@ -1,28 +1,24 @@
-import React, { useCallback, useState } from "react";
-import Child from "./Child";
+import React from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import "./index.css";
+import Home from "./components/Home";
+import About from "./components/About";
+import BlogDetails from "./components/BlogDetails";
 
 export default function App() {
-   const [number, setNumber] = useState(1);
-  const [dark, setDark] = useState(false);
-
-  const getItem = useCallback(() => {
-    return [number, number + 1, number + 2];
-  }, [number]);
-
-  const theme = {
-    backgroundColor: dark ? "#333" : "#fff",
-    color: dark ? "#fff" : "#333",
-  };
-
   return (
-     <div style={theme}>
-      <input
-        type="number"
-        value={number}
-        onChange={(e) => setNumber(parseInt(e.target.value))}
-      />
-      <button onClick={() => setDark(!dark)}>Toggle theme</button>
-      <Child getItem={getItem} />
+    <div>
+      <BrowserRouter>
+        <nav className="header">
+          <Link to="/">Home</Link> <br /> <br />
+          <Link to="/About">About</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/About/:id" element={<BlogDetails />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
