@@ -5,9 +5,33 @@
     border: 0;
 }
 
-.main-body{
-  background-color: rgb(100, 100, 100);
-  color: white;
+body{
   width: 100vw;
   height: 100vh;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > div {
+  padding: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(135, 235, 218);
+  width: 40%;
+}
+h2 {
+  text-align: center;
+}
+nav {
+  width: 100%;
+   display: flex;
+  gap: 10px;
+}
+nav > input {
+  width: 79%;
+}
+nav > button {
+  width: 29%;
+}
+li{
+  list-style: inside;
 }
